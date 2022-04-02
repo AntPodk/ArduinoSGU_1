@@ -1,0 +1,59 @@
+const int ledPinA1 = 5;
+int ledStateA1 = LOW;             // ledState used to set the LED
+unsigned long previousMillisA1 = 0;        // will store last time LED was updated
+const long intervalA1 = 200000;           // interval at which to blink (milliseconds)
+
+const int ledPinA2 = 6;
+int ledStateA2 = LOW;
+unsigned long previousMillisA2= 0;
+const long intervalA2 = 125000;
+
+const int ledPinA3 = 9;
+int ledStateA3 = LOW;
+unsigned long previousMillisA3 = 0;
+const long intervalA3 = 18000;
+
+const int ledPinA4 = 10;
+int ledStateA4 = LOW;
+unsigned long previousMillisA4 = 0;
+const long intervalA4 = 2000;
+
+const int ledPinA5 = 11;
+int ledStateA5 = LOW;
+unsigned long previousMillisA5 = 0;
+const long intervalA5 = 110;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(ledPinA1, OUTPUT);
+  pinMode(ledPinA2, OUTPUT);
+  pinMode(ledPinA3, OUTPUT);
+  pinMode(ledPinA4, OUTPUT);
+  pinMode(ledPinA5, OUTPUT);
+}
+
+void loop() {
+
+  unsigned long currentMillisA = micros(); // micros
+
+  if (currentMillisA - previousMillisA1 >= intervalA1) {
+    previousMillisA1 = currentMillisA;
+    ledStateA1 = (ledStateA1 == LOW) ? HIGH : LOW;
+    digitalWrite(ledPinA1, ledStateA1); }
+  if (currentMillisA - previousMillisA2 >= intervalA2) {
+    previousMillisA2 = currentMillisA;
+    ledStateA2 = (ledStateA2 == LOW) ? HIGH : LOW;
+    digitalWrite(ledPinA2, ledStateA2); }
+  if (currentMillisA - previousMillisA3 >= intervalA3) {
+    previousMillisA3 = currentMillisA;
+    ledStateA3 = (ledStateA3 == LOW) ? HIGH : LOW;
+    digitalWrite(ledPinA3, ledStateA3); }
+  if (currentMillisA - previousMillisA4 >= intervalA4) {
+    previousMillisA4 = currentMillisA;
+    ledStateA4 = (ledStateA4 == LOW) ? HIGH : LOW;
+    digitalWrite(ledPinA4, ledStateA4); }
+  if (currentMillisA - previousMillisA5 >= intervalA5) {
+    previousMillisA5 = currentMillisA;
+    ledStateA5 = (ledStateA5 == LOW) ? HIGH : LOW;
+    digitalWrite(ledPinA5, ledStateA5); }
+}
